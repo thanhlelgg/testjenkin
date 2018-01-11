@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh "chmod 777 ./sendmail.py"
-                sh "./sendmail.py"
+                sh "python sendmail.py"
             }
         }
         stage('Test') {
