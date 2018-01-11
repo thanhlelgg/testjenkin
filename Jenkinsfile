@@ -7,10 +7,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                node {
-                    chmod 777 ./sendmail.py
-                    ./sendmail.py
-                }
+            }
+            node {
+                chmod 777 ./sendmail.py
+                ./sendmail.py
             }
         }
         stage('Test') {
