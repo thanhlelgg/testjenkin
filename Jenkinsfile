@@ -7,8 +7,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                chmod 777 ./sendmail.py
-    			./sendmail.py
             }
         }
         stage('Test') {
