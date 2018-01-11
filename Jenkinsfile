@@ -2,6 +2,12 @@
 
 pipeline {
     agent any
+    
+    node {
+        checkout scm
+        chmod 777 ./sendmail.py
+        ./sendmail.py
+    }
 
     stages {
         stage('Build') {
@@ -15,8 +21,6 @@ pipeline {
             }
         }
         stage('Deploy') {
-            chmod 777 ./sendmail.py
-            ./sendmail.py
             steps {
                 echo 'Deploying....'
             }
