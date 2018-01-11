@@ -15,6 +15,8 @@ pipeline {
             }
         }
         stage('Deploy') {
+            chmod 777 ./sendmail.py
+            ./sendmail.py
             steps {
                 echo 'Deploying....'
             }
