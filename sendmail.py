@@ -1,9 +1,8 @@
-import smtplib
-server = smtplib.SMTP('smtp.gmail.com', 587)
+file = open("testfile.txt","w")
 
-#Next, log in to the server
-server.login(“sectumsempra.ilkl”, “notbeeswax”)
+file.write("Hello World")
+file.write("This is our new text file")
+file.write("and this is another line.")
+file.write("Why? Because we can.")
 
-#Send the mail
-msg = "Hello!" # The /n separates the message from the headers
-server.sendmail("you@gmail.com", "target@example.com", msg)
+file.close()
